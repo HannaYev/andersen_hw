@@ -1,0 +1,22 @@
+.textareaWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.customTextarea {
+    font-size: 14px;
+    outline:none;
+    resize:none;
+    overflow:auto;
+    border-radius: 9px;
+    padding: 5px;
+    background-color: rgb(233, 235, 235);
+    transition: 0.3s all ease;
+    max-width: 500px;
+    width: 100%;
+}
+
+.customTextarea:hover {
+    background-color: #fff;
+}
