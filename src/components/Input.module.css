@@ -1,19 +1,19 @@
 .inputWrapper {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .customInput {
-    color: rgb(108, 110, 110);
-    padding: 5px;
-    border-radius: 9px;
-    outline:none;
-    border: 1px solid gray;
-    background-color: rgb(233, 235, 235);
-    transition: 0.3s all ease;
+  color: rgb(108, 110, 110);
+  padding: 5px;
+  border-radius: 9px;
+  outline: none;
+  border: 1px solid gray;
+  background-color: rgb(233, 235, 235);
+  transition: 0.3s all ease;
 }
 
-.customInput:hover{
-    background-color: #fff;
+.customInput:hover {
+  background-color: #fff;
 }
