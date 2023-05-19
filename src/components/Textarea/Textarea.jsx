@@ -12,9 +12,7 @@ class Textarea extends React.Component {
       maxLength = "610",
       onChange,
       value,
-      isValid,
-      errorMessage,
-      message,
+      isValid,     
       attemptingSubmit,
     } = this.props;
 

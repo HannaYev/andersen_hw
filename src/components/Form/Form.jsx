@@ -5,10 +5,7 @@ import Input from "../Input/Input";
 import Textarea from "../Textarea/Textarea";
 
 class Form extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+ 
   render() {
     const {
       onChangeName,

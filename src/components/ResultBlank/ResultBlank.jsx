@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./ResultBlank.module.css";
 
 class ResultBlank extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+ 
 
   render() {
     const { formData } = this.props;
