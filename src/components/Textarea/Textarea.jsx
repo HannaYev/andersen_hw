@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Textarea.module.css";
 
 
-function Textarea2 (props){
+function Textarea (props){
     const {
         children,
         name,
@@ -44,4 +44,4 @@ function Textarea2 (props){
 }   
 
 
-export default Textarea2;
+export default Textarea;

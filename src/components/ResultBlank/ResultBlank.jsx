@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ResultBlank.module.css";
 
-function ResultBlank2(props){
-    const { formData } = props;
+function ResultBlank(props){
+    const { stateValues } = props;
     const {
       name,
       surname,
@@ -12,7 +12,7 @@ function ResultBlank2(props){
       about,
       technology,
       lastProject,
-    } = formData;
+    } = stateValues;
 
     return (
         <div className={styles.blankWrapper}>
@@ -29,7 +29,7 @@ function ResultBlank2(props){
       );
 }
 
-export default ResultBlank2;
+export default ResultBlank;
 
 
 

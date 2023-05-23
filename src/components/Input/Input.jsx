@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-function Input2(props){
+function Input(props){
   const {
     children,
     name,
@@ -45,4 +45,4 @@ function Input2(props){
   );
 }   
 
-export default Input2;
+export default Input;
