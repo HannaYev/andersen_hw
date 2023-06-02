@@ -70,39 +70,6 @@ function App() {
         );
   };
 
-  const onChangeName = (event) => {
-    onChangeInput(event, "name", isCapitalizedLettersOnly, "isNameValid");
-  };
-
-  const onChangeSurname = (event) => {
-    onChangeInput(event, "surname", isCapitalizedLettersOnly, "isSurnameValid");
-  };
-
-  const onChangeBirthDate = (event) => {
-    onChangeInput(event, "birthDate", isYearBiggerThan2020, "isBirthDateValid");
-  };
-
-  const onChangeWebsite = (event) => {
-    onChangeInput(event, "website", isCorrectWebsite, "isWebsiteValid");
-  };
-
-  const onChangeAbout = (event) => {
-    onChangeInput(event, "about", isAreaLengthFixed, "isAboutValid");
-  };
-
-  const onChangeTechnology = (event) => {
-    onChangeInput(event, "technology", isAreaLengthFixed, "isTechnologyValid");
-  };
-
-  const onChangeLastProject = (event) => {
-    onChangeInput(
-      event,
-      "lastProject",
-      isAreaLengthFixed,
-      "isLastProjectValid"
-    );
-  };
-
   const onChangePhone = (event) => {
     let newValueState;
     setValueState((prevValueState) => {
@@ -110,24 +77,18 @@ function App() {
       if (prevValueState.phone.length > newValue.length) {
         newValueState = { ...prevValueState, phone: newValue };
       } else {
-        if (newValue.length === 1) {
-          newValueState = { ...prevValueState, phone: newValue + "-" };
-        } else if (newValue.length === 6) {
-          newValueState = { ...prevValueState, phone: newValue + "-" };
-        } else if (newValue.length === 9) {
+        if (
+          newValue.length === 1 || newValue.length === 6 || newValue.length === 9) {
           newValueState = { ...prevValueState, phone: newValue + "-" };
         } else {
           newValueState = { ...prevValueState, phone: newValue };
         }
-      }
+      }     
+
       const isPhoneValid = isCorrectPhone(newValueState.phone);
       setFormData({ ...formData, isPhoneValid });
       return { ...newValueState };
     });
-  };
-
-  const onClickResetBtn = () => {
-    changeFormValues(getDefaultState());
   };
 
   const onClickSubmitBtn = (e) => {
@@ -147,15 +108,17 @@ function App() {
         <Form
           stateValues={initialState}
           formData={formData}
-          onChangeName={onChangeName}
-          onChangeSurname={onChangeSurname}
-          onChangeBirthDate={onChangeBirthDate}
-          onChangePhone={onChangePhone}
-          onChangeWebsite={onChangeWebsite}
-          onChangeAbout={onChangeAbout}
-          onChangeTechnology={onChangeTechnology}
-          onChangeLastProject={onChangeLastProject}
-          onClickResetBtn={onClickResetBtn}
+          onChangeName = {(e)=> onChangeInput(e, "name", isCapitalizedLettersOnly, "isNameValid")}                
+          onChangeSurname={(e)=> onChangeInput(e, "surname", isCapitalizedLettersOnly,"isSurnameValid")}          
+          onChangeBirthDate={(e)=> onChangeInput(e, "birthDate", isYearBiggerThan2020, "isBirthDateValid")}
+          onChangePhone={onChangePhone}   
+          onChangeWebsite={(e)=> onChangeInput(e, "website", isCorrectWebsite, "isWebsiteValid")}         
+          onChangeAbout={(e)=> onChangeInput(e, "about", isAreaLengthFixed, "isAboutValid")}          
+          onChangeTechnology={(e)=> onChangeInput(e, "technology", isAreaLengthFixed, "isTechnologyValid")}          
+          onChangeLastProject={(e)=> onChangeInput(e,"lastProject", isAreaLengthFixed,"isLastProjectValid")}
+          onClickResetBtn={() => {
+            changeFormValues(getDefaultState());
+          }}
           onClickSubmitBtn={onClickSubmitBtn}
         />
       ) : (
